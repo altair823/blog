@@ -7,7 +7,6 @@ import org.altair823.blog.web.dto.PostsSaveRequestDto;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
-@RestController
 public class PostsApiController {
 
     private final PostsService postsService;

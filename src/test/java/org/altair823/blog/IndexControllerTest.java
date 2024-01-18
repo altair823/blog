@@ -16,11 +16,4 @@ class IndexControllerTest {
     @Autowired
     private MockMvc mvc;
 
-    @Test
-    void hello() throws Exception {
-        String expected = "hello, world!";
-        mvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(expected));
-    }
 }

@@ -15,11 +15,6 @@ public class IndexController {
 
     private final PostsService postsService;
 
-    @GetMapping(path = "/home")
-    public String home() {
-        return "hello, world!";
-    }
-
     @GetMapping(path = "/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());

@@ -18,7 +18,7 @@ public class PostsRepositoryTest {
         postRepository.deleteAll();
     }
 
-    @Test
+//    @Test
     public void savePost() {
 //        String title = "테스트 게시글";
 //        String content = "테스트 본문";

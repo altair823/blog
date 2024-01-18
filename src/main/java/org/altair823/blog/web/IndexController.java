@@ -1,7 +1,6 @@
 package org.altair823.blog.web;
 
 import lombok.RequiredArgsConstructor;
-import org.altair823.blog.domain.Posts;
 import org.altair823.blog.service.PostsService;
 import org.altair823.blog.web.dto.PostsSaveRequestDto;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,8 @@ public class IndexController {
     }
 
     @GetMapping(path = "/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("posts", postsService.findAllDesc());
         return "content/index";
     }
 

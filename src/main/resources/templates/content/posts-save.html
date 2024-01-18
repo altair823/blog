@@ -8,35 +8,41 @@
 <th:block layout:fragment="head">
     <title>Spring Boot</title>
 
-    <!--/* css */-->
-    <link th:href="@{/css/common.css}" rel="stylesheet" />
+    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/simplemde.min.css}"/>
 </th:block>
 <body>
 <th:block layout:fragment="header" th:include="@{/fragments/header}"></th:block>
 
 <div layout:fragment="content" class="content">
-    <div class="col-md-12">
-        <div class="col-md-4">
-            <form th:action="@{/posts/save}" th:object="${requestDto}" method="post">
-                <div>
-                    <label for="title">제목</label>
-                    <input type="text" th:field="*{title}" placeholder="제목을 입력하세요"/>
-                </div>
-                <br>
-                <div>
-                    <label for="author">작성자</label>
-                    <input type="text" th:field="*{author}" placeholder="작성자를 입력하세요"/>
-                </div>
-                <br>
-                <div>
-                    <label for="content">내용</label>
-                    <textarea th:field="*{content}" placeholder="내용을 입력하세요"></textarea>
-                </div>
-                <button type="submit">등록</button>
-            </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form th:action="@{/posts/save}" th:object="${requestDto}" method="post" class="mt-4">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">제목</label>
+                        <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="제목을 입력하세요"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="author" class="form-label">작성자</label>
+                        <input type="text" th:field="*{author}" class="form-control" id="author" placeholder="작성자를 입력하세요"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">내용</label>
+                        <textarea type="text" rows="4" id="content" placeholder="Content" class="form-control"
+                                  th:field="*{content}" autocomplete="off"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">등록</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
+<script th:src="@{/js/simplemde.min.js}"></script>
+<script>
+    var simplemde = new SimpleMDE({element: document.getElementById("content")});
+</script>
 
 <th:block layout:fragment="footer" th:include="@{/fragments/footer}"></th:block>
 </body>

@@ -31,6 +31,9 @@ dependencies {
 //    runtimeOnly("org.postgresql:postgresql")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    // https://mvnrepository.com/artifact/com.vladsch.flexmark/flexmark
+    implementation("com.vladsch.flexmark:flexmark:0.64.8")
+
 }
 
 tasks.withType<Test> {

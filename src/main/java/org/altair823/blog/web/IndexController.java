@@ -17,7 +17,7 @@ public class IndexController {
 
     @GetMapping(path = "/home")
     public String home() {
-        return "content/home";
+        return "hello, world!";
     }
 
     @GetMapping(path = "/")

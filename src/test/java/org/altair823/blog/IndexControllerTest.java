@@ -19,7 +19,7 @@ class IndexControllerTest {
     @Test
     void hello() throws Exception {
         String expected = "hello, world!";
-        mvc.perform(get("/hello"))
+        mvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(expected));
     }

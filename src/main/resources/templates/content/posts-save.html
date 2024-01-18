@@ -12,7 +12,7 @@
     <link th:rel="stylesheet" th:href="@{/css/simplemde.min.css}"/>
 </th:block>
 <body>
-<th:block layout:fragment="header" th:include="fragments/header"></th:block>
+<th:block layout:fragment="header" th:include="~{fragments/header}"></th:block>
 
 <div layout:fragment="content" class="content">
     <div class="container">
@@ -44,6 +44,6 @@
     var simplemde = new SimpleMDE({element: document.getElementById("content")});
 </script>
 
-<th:block layout:fragment="footer" th:include="fragments/footer"></th:block>
+<th:block layout:fragment="footer" th:include="~{fragments/footer}"></th:block>
 </body>
 </html>

@@ -35,7 +35,7 @@ dependencies {
     implementation("com.vladsch.flexmark:flexmark:0.64.8")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-//    implementation("org.springframework.session:spring-session-jdbc")
+    implementation("org.springframework.session:spring-session-jdbc")
 
 
 }

@@ -42,4 +42,10 @@ public class PostsController {
         postsService.update(id, requestDto);
         return "redirect:/posts/{id}";
     }
+
+    @GetMapping(path = "/posts-delete/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        postsService.delete(id);
+        return "redirect:/";
+    }
 }

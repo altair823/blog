@@ -30,6 +30,12 @@ public class PostsService {
         return id;
     }
 
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("No post with ID " + id));
+        postsRepository.delete(posts);
+    }
+
     public PostsResponseDto findById(Long id) {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("No post with ID " + id));
         return new PostsResponseDto(posts);

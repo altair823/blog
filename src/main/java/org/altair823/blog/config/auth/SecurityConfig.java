@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeHttpRequests ->
                         authorizeHttpRequests
                                 .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/posts/{id}").permitAll()
-                                .requestMatchers("/posts-save", "/api/v1/**").hasRole(Role.USER.name())
+                                .requestMatchers("/posts-save", "/posts-update/**", "/posts-delete/**", "/api/v1/**").hasRole(Role.USER.name())
                                 .anyRequest().authenticated())
                 .logout(logout ->
                         logout

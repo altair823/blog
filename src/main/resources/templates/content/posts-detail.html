@@ -23,7 +23,7 @@
                         <p class="card-text">Created: <span th:text="${posts.createdDateTime}">CreatedDateTime</span></p>
                         <p class="card-text">Modified: <span th:text="${posts.modifiedDateTime}">ModifiedDateTime</span></p>
                         <div class="card-text" th:utext="${posts.content}">Content</div>
-                        <a th:href="@{'/posts/edit/' + ${posts.id}}" class="btn btn-primary">Edit</a>
+                        <a th:href="@{'/posts-update/' + ${posts.id}}" class="btn btn-primary">Edit</a>
                         <a th:href="@{'/posts/delete/' + ${posts.id}}" class="btn btn-danger">Delete</a>
                     </div>
                 </div>

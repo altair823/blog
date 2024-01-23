@@ -6,6 +6,7 @@ import org.altair823.blog.domain.PostsRepository;
 import org.altair823.blog.web.dto.PostsListResponseDto;
 import org.altair823.blog.web.dto.PostsResponseDto;
 import org.altair823.blog.web.dto.PostsSaveRequestDto;
+import org.altair823.blog.web.dto.PostsUpdateRequestDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +24,9 @@ public class PostsService {
     }
 
     @Transactional
-    public Long update(Long id, PostsSaveRequestDto requestDto) {
+    public Long update(Long id, PostsUpdateRequestDto requestDto) {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("No post with ID " + id));
-        posts.update(requestDto.getTitle(), requestDto.getContent());
+        posts.update(requestDto.title(), requestDto.content());
         return id;
     }
 

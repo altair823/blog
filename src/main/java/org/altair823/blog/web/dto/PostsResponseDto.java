@@ -33,4 +33,16 @@ public class PostsResponseDto {
         HtmlRenderer renderer = HtmlRenderer.builder().build();
         return renderer.render(document);
     }
+
+    @Override
+    public String toString() {
+        return "PostsResponseDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", createdDateTime='" + createdDateTime + '\'' +
+                ", modifiedDateTime='" + modifiedDateTime + '\'' +
+                '}';
+    }
 }

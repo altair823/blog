@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default_layout}">
+
+<th:block layout:fragment="head">
+    <title>Spring Boot</title>
+
+    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/simplemde.min.css}"/>
+</th:block>
+<body>
+<th:block layout:fragment="header" th:replace="~{fragments/header}"></th:block>
+
+<div layout:fragment="content" class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form th:object="${requestDto}" method="post" class="mt-4">
+                    <input type="hidden" name="_method" value="put" />
+                    <div class="mb-3">
+                        <label for="title" class="form-label">제목</label>
+                        <input type="text" th:field="*{title}" class="form-control"
+                               id="title" placeholder="제목을 입력하세요"
+                                th:value="*{title}"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">내용</label>
+                        <textarea type="text" rows="4" id="content" placeholder="Content" class="form-control"
+                                  th:field="*{content}" autocomplete="off" th:text="*{content}"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">수정</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/simplemde.min.js}"></script>
+<script>
+    var simplemde = new SimpleMDE({element: document.getElementById("content")});
+</script>
+
+<th:block layout:fragment="footer" th:replace="~{fragments/footer}"></th:block>
+</body>
+</html>

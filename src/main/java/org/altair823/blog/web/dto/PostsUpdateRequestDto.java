@@ -1,19 +1,12 @@
 package org.altair823.blog.web.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+public record PostsUpdateRequestDto(String title, String content) {
 
-@Getter
-@NoArgsConstructor
-public class PostsUpdateRequestDto {
-
-    private String title;
-    private String content;
-
-    @Builder
-    public PostsUpdateRequestDto(String title, String content) {
-        this.title = title;
-        this.content = content;
+    @Override
+    public String toString() {
+        return "PostsUpdateRequestDto{" +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }

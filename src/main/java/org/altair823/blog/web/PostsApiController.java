@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.altair823.blog.service.PostsService;
 import org.altair823.blog.web.dto.PostsResponseDto;
 import org.altair823.blog.web.dto.PostsSaveRequestDto;
+import org.altair823.blog.web.dto.PostsUpdateRequestDto;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -17,7 +18,7 @@ public class PostsApiController {
     }
 
     @PutMapping(path = "/api/v1/posts/{id}")
-    public Long update(@PathVariable("id") Long id, @RequestBody PostsSaveRequestDto requestDto) {
+    public Long update(@PathVariable("id") Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
 
